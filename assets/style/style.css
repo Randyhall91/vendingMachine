@@ -1,1 +1,5 @@
 /* BASIC STYLES HERE */
+.img-size {
+  max-width: 20vh;
+  max-height: 20vh;
+}

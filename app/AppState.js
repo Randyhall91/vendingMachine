@@ -1,11 +1,21 @@
+import { Snack } from "./Models/Snack.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 import { loadState } from "./Utils/Store.js"
 
+
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = loadState('values', Value)
+
+
+
+  /** @type {import('./Models/Snack').Snack[]} */
+  snacks = [new Snack('snickers', 1.00), new Snack('reeses', 1.50)]
+
+
+
 }
 
 export const appState = new Proxy(new AppState(), {

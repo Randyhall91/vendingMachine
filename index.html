@@ -13,9 +13,26 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>vendingMachine</title>
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
 </head>
 
-<body>
+<body class="debug">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
@@ -28,11 +45,23 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+
+        <div class="col-12 text-center">
+          <h1>Welcome to my Vending Machine</h1>
         </div>
+
+      </div>
+      <div class="row justify-content-center align-items-center" id="snacks">
+
+        <!-- <div class="col-md-4 text-center">
+          <img src="https://thiscatdoesnotexist.com" class="img-size" alt="">
+          <div>
+            <button class="btn btn-secondary" onclick="app.vendValuesController.hello()">Hello</button>
+          </div>
+        </div> -->
       </div>
     </div>
+
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
@@ -45,7 +74,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
     integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
-  <script src="app/App.js" type="module"></script>
+  <script src="app/VendApp.js" type="module"></script>
 </body>
 
 </html>
